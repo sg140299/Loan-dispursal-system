@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!--  Start of NavBar -->
+		<div>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:60px;">
+  <a class="navbar-brand" href="http://127.0.0.1:8000/" style="color:#000000;background-color:white;">LoanMe</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      
+      
+      
+    </ul>
+    <button class="btn btn-primary mx-auto" type="button" onclick="window.location.href='/client/faq'">FAQ's</button>
+     <button class="btn btn-outline-success my-2 my-sm-0" 
+      onclick="window.location.href='/client/apply'">Apply for loan</button> 
+      &nbsp;&nbsp;<button class="btn btn-outline-danger my-2 my-sm-0" 
+      onclick="window.location.href='/client/logout'">Logout</button>
+  </div>
+</nav>	
+</div>
+	<!-- End of NavBar -->
+
+<div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1" style="font-size:19px;"><strong>Dash board</strong></a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" role="tabpanel" id="tab-1">
+                <p><div class="card"><img class="card-img w-100 d-block">
+        <div class="card-img-overlay">
+            <h4 style="font-size:30px;color:rgb(0,0,0);">Welcome {{email}}</h4>
+            {% if not apply1 %}
+            <p><h2>You have not applied for loan yet</h2></p>
+            {% endif %}
+            {% if apply1 %}
+            <p><h2>Your loan application is 
+              {% if status %}
+              <span class="badge badge-pill badge-primary">Have been approved</span></h2></p>
+              {% endif %}
+              {% if not status %}
+              <span class="badge badge-pill badge-primary">Under Proccessing</span></h2></p>
+              {% endif %}
+              {% endif%}
+
+        </div>
+    </div></p>
+</div>
+</div>
+</div>
+</body>
+</html>

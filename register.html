@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+{% load static %}
+<body style="background: url({% static 'images/image7.jpg' %});">
+   <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="height:60px;">
+        <div class="container"><a class="navbar-brand" href="http://127.0.0.1:8000/" style="background-color:white;">LoanMe</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Loans</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    </li>
+                </ul><button class="btn btn-primary mx-auto" type="button" onclick="window.location.href='/client/faq'">FAQ's</button><span class="navbar-text actions"> <button class="btn btn-outline-success my-2 my-sm-0" 
+      onclick="window.location.href='/client/login'">Login</button>
+        </div>
+    </nav>
+  <!-- Registration Body -->
+    <br/><br/>
+    <br/><br/>
+    <center>
+      <div class="alert alert-primary" style="width:50%;" align="left" role="alert">
+          <h2 class="text-center"><strong>Create</strong> an account.</h2>
+          <hr/>
+          <form method="POST" action="{%url 'doregister' %}" id="form" onsubmit="return validate()">
+            {% csrf_token %}
+             
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="inputEmail4">Email</label>
+              <input type="email" name="email" required="" class="form-control" id="email" placeholder="Email">
+            </div>    
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" name="pass" required="" class="form-control"
+               id="pass" placeholder="Password">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Confirm Password</label>
+              <input type="password" required="" class="form-control" 
+              id="cpass" placeholder="Re-Enter Password">
+            </div>
+          </div>
+
+          
+        
+
+    
+  <div class="form-group">
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox" required="">I agree to the license terms.</label></div>
+                </div>
+                <div class="form-group"><button class="btn btn-primary" type="submit">Sign Up</button></div><a href="/client/login" class="already">You already have an account? Login here.</a>
+  
+</form>
+      </div>
+    </center>
+  <!-- End Registration Body -->
+
+  <!-- Validation of form data -->
+    <script type="text/javascript">
+      function validate(){
+        var x = document.getElementById("form");
+        if(x.pass.value != x.cpass.value){
+          alert("Passwords Don't Match");
+          x.cpass.focus();
+          x.cpass.type = "text";
+          return false;
+        }
+        return true;
+
+      }
+
+    </script>
+
+
+  <!-- End validation of form data -->
+
+
+
+
+
+
+</body>
+</html>

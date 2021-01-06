@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LoanMe - Registration</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+{% load static %}
+<body style="background: url({% static 'images/5.jpg' %});">
+<!--  Start of NavBar -->
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:60px;">
+  <a class="navbar-brand" href="http://127.0.0.1:8000/" style="color:#000000;background-color:white;">LoanMe</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>  
+</div>
+  <!-- End of NavBar -->
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<!-- Start of registration-->
+	<center>
+	<div class="alert alert-primary" style="width:65%;" align="left" role="alert">
+		<h2>Apply For Education Loan</h2>
+		<h4>Feilds marked with (*) are mandatory</h4>
+	<form method="POST" action="{% url 'doapply' %}" onsubmit="return validate()" id="form" enctype="multipart/form-data">
+    {% csrf_token %}
+
+  	<div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="input">Name <sup style="color:red;">*</sup></label>
+      <input type="text" name="name" class="form-control" id="name" placeholder="Name ( as in PAN card)" required="">
+    </div>
+  </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+		<label for="input">Date of Birth <sup style="color:red;">*</sup></label>
+      	<input type="date" name="dob" class="form-control" id="dob"  required="">
+	</div>
+    <div class="form-group col-md-6">
+    <label for="input">Gender :</label>
+    <div class="form-check">
+ 	 <input class="form-check-input" type="radio" name="gender" id="radio1" value="Male" checked>
+  	<label class="form-check-label" for="exampleRadios1">
+    Male
+  	</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	<input class="form-check-input" type="radio" name="gender" id="radio2" value="Female">
+  	<label class="form-check-label" for="exampleRadios2">
+    Female
+  	</label>
+  </div>
+	</div>
+	</div>
+	<div class="form-row">
+	<div class="form-group col-md-6">
+    <label for="inputPassword4">Phone<sup style="color:red;">*</sup></label>
+    <input type="number" name="phone" class="form-control" id="phone" placeholder="Mobile No." required="">
+    </div>
+	<div class="form-group col-md-6">
+    <label for="inputPassword4">Pan Card <sup style="color:red;">*</sup></label>
+    <input type="number" name="pan" class="form-control" id="pan" placeholder="Pan Card No." required="">
+    </div>
+	</div>
+  <div class="form-group col-md-12">
+    <label for="input">Which Degree You Want To Pursue</label>
+    <div class="form-check">
+ 	 <input class="form-check-input" type="radio" name="degree" id="degree" value="Graduation" checked>
+  	<label class="form-check-label" for="exampleRadios1">
+    Graduation
+  	</label>
+	</div>
+	<div class="form-check">
+  	<input class="form-check-input" type="radio" name="degree" id="degree" value="Post Graduation">
+  	<label class="form-check-label" for="exampleRadios2">
+    Post Graduation
+  	</label>
+	</div>
+	<br>
+	<div class="form-group col-md-6">
+		<label for="">Select Your Course </label>
+		<select id="course" name="course" class="form-control">
+        <option selected="">Engineering</option>
+        <option>Medical</option>
+        <option>Management</option>
+        <option>Law</option>
+        <option>Others</option>
+      </select>
+	</div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-12">
+    <label for="inputAddress">Address <sup style="color:red;">*</sup></label>
+    <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required="">
+  </div>
+</div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputZip">Pincode <sup style="color:red;">*</sup></label>
+      <input type="text" class="form-control" name="pin" id="inputZip" placeholder="Pincode" required="">
+    </div>
+  </div>
+  <div class="form-row">
+  		<div class="form-group col-md-6">
+		<label for="">Select Your Co-Borrower </label>
+		<select id="borrower" name="borrow" class="form-control">
+        <option selected="">Father</option>
+        <option>Mother</option>
+        <option>Guardian</option>
+      </select>
+	</div>
+		<div class="form-group col-md-6">
+		<label for="">Your Co-Borrower Employement status </label>
+		<select id="Course" name="employ" class="form-control">
+        <option selected="">Salaried</option>
+        <option>Self-Employed</option>
+        <option>Non Working</option>
+      </select>
+	</div>
+  </div>
+  <div class="form-row">
+  	<div class="form-group col-md-6">
+  		<label for="">Monthy Income <sup style="color:red;">*</sup></label>
+  		<input type="number" name="income" class="form-control" id="income" placeholder="Your Co-Borrower Monthy Income" required="">
+  	</div>
+  	  	<div class="form-group col-md-6">
+  		<label for="">Loan Amount <sup style="color:red;">*</sup></label>
+  		<input type="number" name="loan" class="form-control" id="loan" placeholder="Loan amount should be between 50000 and 1500000" required="">
+  	</div>
+  </div>
+  <div class="form-row">
+  	<div class="form-group">
+  		<label>Upload Your Admission/Registration Letter from College</label><br>
+  			<input type="file" name="images" required="">
+	</div>
+</div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" required="">
+      <label class="form-check-label" for="gridCheck">
+        Agree to <a href="/client/condition"><u>Terms and condition</u></a>
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</center>
+<!--End of form-->
+<!--Validation-->
+<script type="text/javascript">
+  function validate(){
+    var x= document.getElementById("form")
+    var loan=x.loan.value
+    if (loan<50000){
+      alert("Loan value too low (Should be atleast 50000)");
+      x.loan.focus();
+      x.loan.type="number";
+      return false;
+    }
+    else if (loan>1500000){
+      alert("Loan value too high (Should be at max 1500000)");
+      x.loan.focus();
+      x.loan.type="number";
+      return false;
+    }
+    return true;
+  }
+</script>
+</body>
+</html>

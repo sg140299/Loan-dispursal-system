@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% load static %}
+	<!--  Start of NavBar -->
+		<div>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:60px;">
+  <a class="navbar-brand" href="#" style="color:#000000;background-color:white;">LoanMe</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      
+      
+      
+    </ul>
+    <button class="btn btn-primary mx-auto" type="button" onclick="window.location.href='/client/faq'">FAQ's</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" 
+      onclick="window.location.href='/client/login'">Login</button>
+      &nbsp;&nbsp;<button class="btn btn-outline-danger my-2 my-sm-0" 
+      onclick="window.location.href='/client/register'">Register</button>
+  </div>
+</nav>	
+</div>
+	<!-- End of NavBar -->
+
+
+
+	<!-- Start Scroll Poster -->
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-interval="2000">
+        <img src="{% static 'images/personal_loan.jpg' %}" class="d-block w-100" alt="Slide Image" height="450">
+    </div>
+    <div class="carousel-item" data-interval="2000">
+      <img src="{% static 'images/home_loan.jpg' %}" class="d-block w-100" alt="Slide Image" height="450">
+    </div>
+    <div class="carousel-item" data-interval="2000">
+      <img src="{% static 'images/education_loan.jpg' %}" class="d-block w-100" alt="Slide Image" height="450">
+    </div>
+  </div>
+</div>
+	<!-- End Scroll Poster -->
+  <br>
+  <br>
+  <br>
+  <!-- Start of feature box -->
+  <div class="features-clean"></div>
+    <div></div>
+    <div class="features-blue">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Why LoanMe?</h2>
+                <br>
+            </div>
+            <div class="row features">
+                <div class="col-sm-6 col-md-4 item"><i class="fa fa-plane icon"></i>
+                    <h3 class="name">Superfast processing</h3>
+                    <p class="description">within 72 hours</p>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><i class="fa fa-clock-o icon"></i>
+                    <h3 class="name">Always available</h3>
+                    <p class="description">.Ensure better availabilty with us</p>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><i class="fa fa-list-alt icon"></i>
+                    <h3 class="name">No collateral required</h3>
+                    <p class="description">No risk of any asset loss</p>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><i class="fa fa-rupee icon"></i>
+                    <h3 class="name">Flexible repayments</h3>
+                    <p class="description">We care for your convenience</p>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><i class="fa fa-leaf icon"></i>
+                    <h3 class="name">Fair interest rate</h3>
+                    <p class="description">from 1.25% per month</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  <br>
+  <br>
+  <!-- End of feature box -->
+
+  <!-- Start of About Us -->
+
+ <div class="block-heading">
+                    <h2 class="text-info">About Us</h2>
+                    <br>
+                    <div class="alert alert-dark" role="alert"><span>Founded in 2019, LoanMe authorizes personal loans from ₹10,000 to ₹15,00,000. The process is fast and easy and it's even possible to have money deposited into your checking account in as fast as 3-4 hours! With fixed monthly payments and no pre-payment penalties, LoanMe is your go-to personal lender for whatever life throws at you.</span></div>
+                </div>
+<br>
+<br>
+<br>
+<!-- End of About us -->
+
+<!-- team mate -->
+<div class="row justify-content-center">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="{% static 'images/avatar1.jpg' %}">
+                            <div class="card-body info">
+                                <h4 class="card-title">John Smith</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="{% static 'images/avatar2.jpg' %}">
+                            <div class="card-body info">
+                                <h4 class="card-title">Robert Downturn</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="{% static 'images/avatar3.jpg' %}">
+                            <div class="card-body info">
+                                <h4 class="card-title">Ally Sanders</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<br>
+<br>
+<br>
+
+<!-- End of team mate -->
+
+<!-- Contact us -->
+<div class="container" style="height:30px;">
+                <div class="intro">
+                    <h2 class="text-center">Contact Us</h2>
+                    <p class="text-left">NIT Manipur<br>Langol Rd, Lamphelpat Imphal, Manipur 795004<br>Phone no - +91-9874521630 &nbsp; &nbsp; Email- LoanMe@support.com</p>
+                </div>
+            </div>
+
+            <!-- End of contact us -->
+</body>
+</html>

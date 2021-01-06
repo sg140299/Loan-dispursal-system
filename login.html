@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+{% load static %}
+<body style="background: url({% static 'images/blur.jpg' %});">
+
+	<!--  Start of NavBar -->
+		<div>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:60px;">
+  <a class="navbar-brand" href="http://127.0.0.1:8000/" style="color:#000000;background-color:white;">LoanMe</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      
+      
+      
+    </ul>
+    <button class="btn btn-primary mx-auto" type="button" onclick="window.location.href='/client/faq'">FAQ's</button>
+      &nbsp;&nbsp;<button class="btn btn-outline-danger my-2 my-sm-0" 
+      onclick="window.location.href='/client/register'">Register</button>
+  </div>
+</nav>	
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+    <div class="alert alert-success" style="width:50%;" align="left" role="alert">
+      <h4>Login Page</h4>
+      <h6>All fields marked with(*) are mandatory </h6>
+      <hr/>
+      <form method="POST" action="{% url 'dologin' %}">
+        {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address <sup style="color: red;">*</sup></label>
+            <input type="email" name="email" required="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password <sup style="color: red;">*</sup></label>
+            <input type="password" name="pass" required="" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Login</button>
+      </form> 
+    </div>
+  </center>
+  </body>
+</html>

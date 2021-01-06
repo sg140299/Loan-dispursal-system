@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FAQ</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+{% load static %}
+<body style="background: url({% static 'images/image7.jpg' %});">
+	<!--  Start of NavBar -->
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:60px;">
+  <a class="navbar-brand" href="http://127.0.0.1:8000/" style="color:#000000;background-color:white;">LoanMe</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      
+      
+      
+    </ul>
+    
+      <button class="btn btn-outline-success my-2 my-sm-0" 
+      onclick="window.location.href='/client/login'">Login</button>
+      &nbsp;&nbsp;<button class="btn btn-outline-danger my-2 my-sm-0" 
+      onclick="window.location.href='/client/register'">Register</button>
+  </div>
+</nav>  
+</div>
+  <!-- End of NavBar -->
+
+<main class="page faq-page">
+        <section class="clean-block clean-faq dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info"><center>FAQ</center></h2>
+                </div>
+            </div>
+            
+            <div><a class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" role="button" href="#collapse-2" style="background-color:#1631be;width:1300px;">What is Sign up?</a>
+                <div class="collapse" id="collapse-2">
+                    <p>User are required to complete sign up process to register on LoanMe portal. Only User who have completed "Sign up" / "Registration" process can apply for loan through LoanMe portal.</p>
+                </div>
+            </div>
+          
+            
+            <br>
+
+           
+            <div><a class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" role="button" href="#collapse-3" style="background-color:#1631be;width:1300px;">Why is my loan application rejected?</a>
+                <div class="collapse" id="collapse-3">
+                    <p>You may not be eligible as per the norms laid down by the selected banks. Please contact the selected banks for more details.</p>
+                </div>
+            </div>
+        
+            <br>
+           
+            <div><a class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-4" role="button" href="#collapse-4" style="background-color:#1631be;width:1300px;">Are there any hidden charges?</a>
+                <div class="collapse" id="collapse-4">
+                    <p>There are no hidden charges. Our Group NBFC levy 2% of sanctioned amount as processing fees</p>
+                </div>
+            </div>
+        
+            <br>
+            
+            <div><a class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1" style="background-color:#1631be;width:1300px;">How much time does it take to get credit evaluation done?</a>
+                <div class="collapse" id="collapse-1">
+                    <p>Our Group NBFC takes 1 to 3 working days.</p>
+                </div>
+            </div>
+          
+            <br>
+           
+           
+            <div><a class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-5" role="button" href="#collapse-5" style="background-color:#1631be;width:1300px;">What are the all documents I need to get credit evaluation done?</a>
+                <div class="collapse" id="collapse-5">
+                    <p>College registration letter or College admission letter</p>
+                </div>
+            </div>
+          
+        </section>
+    </main>
+    </body>
+
+</html>
